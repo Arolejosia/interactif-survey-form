@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>survey-Form.ParoleRhema</title>
+    <link rel="stylesheet" href="style.css" />
+    
+</head>
+
+
+<body>
+<header>
+    <h1></h1>
+
+    <nav>
+       <div id="logo-container">
+        <img src="file:///C:/Users/josia/Documents/logorhema.png" alt="Logo" class="logo">
+        
+    </div>
+    <div id="nav-link">
+        <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">À propos</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        </div>
+    </nav>
+</header>
+ 
+
+
+    <form id="survey-form">
+        
+        <fieldset >
+            <h1 id="title">ParoleRhema Survey Form</h1>
+            <p id="description">Thank you for taking time to help us providing you with the best box</p>
+        </fieldset>
+
+        <fieldset>
+            <label id="name-label" for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Parole Rhema" required /><br>
+
+            <label id="email-label" for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder=" exemple@domaine.com" required />
+
+            <label id="number-label" for="number">Age:</label>
+            <input type="number" id="number" name="number" min="0" max="100" placeholder="0" required />
+
+            <p>How would you like to be contacted?</p>
+            <label>
+                <input type="radio" name="contactMethod" value="whatsapp" required onclick="toggleContactMethod()">
+                WhatsApp
+            </label>
+            <label>
+                <input type="radio" name="contactMethod" value="gmail" onclick="toggleContactMethod()">
+                Gmail
+            </label>
+
+            <div id="contactInput" class="hidden">
+                <input type="text" id="contact" name="contact" required>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <label for="dropdown">For which occasion do you need a meditation box?</label>
+            <select id="dropdown" name="occasion" required>
+                <option value="">Select...</option>
+                <option value="New Convert">New Convert</option>
+                <option value="Marriage">Marriage</option>
+                <option value="Engagement">Engagement</option>
+                <option value="Baptism">Baptism</option>
+                <option value="Back to School">Back to School</option>
+                <option value="Anniversary">Anniversary</option>
+                <option value="Valentine's Day">Valentine's Day</option>
+                <option value="New Job">New Job</option>
+                <option value="Retirement">Retirement</option>
+                <option value="Jubilee or Wedding Anniversary">Jubilee or Wedding Anniversary</option>
+                <option value="Mother's/Father's Day">Mother's/Father's Day</option>
+                <option value="Maternity/Paternity Leave">Maternity/Paternity Leave</option>
+                <option value="Grieving">Grieving</option>
+                <option value="Christmas or Easter">Christmas or Easter</option>
+                <option value="Spiritual Retreat">Spiritual Retreat</option>
+                <option value="Restoration of Faith">Restoration of Faith</option>
+                <option value="Single Life">Single Life</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <p>Is this box for:</p>
+            <label>
+                <input type="radio" name="recipient" value="self" required>
+                Myself
+            </label>
+            <label>
+                <input type="radio" name="recipient" value="Someone else">
+                Someone else
+            </label>
+            <div id="details" class="hidden">
+                <h2>Recipient Details</h2>
+                <label for="recipientName">Name of the person:</label>
+                <input type="text" id="recipientName" name="recipientName" required><br>
+
+                <label for="recipientAge">Age of the person:</label>
+                <input type="number" id="recipientAge" name="recipientAge" min="0" required>
+                <br><br>
+
+                <label for="relationship">Relationship:</label>
+                <select id="relationship" name="relationship" required>
+                    <option value="">Select...</option>
+                    <option value="friend">Friend</option>
+                    <option value="family">Family</option>
+                    <option value="colleague">Colleague</option>
+                    <option value="partner">Partner</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <label for="story">Share a little story about the recipient:</label><br>
+            <textarea id="story" name="story" placeholder="Share your story or that of the person you are gifting the box to, so we can not only pray for you but also make your box more tailored to your needs"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <label for="deliveryLocation">Delivery Location (Country and City):</label>
+            <input type="text" id="deliveryLocation" name="deliveryLocation" placeholder="Enter country and city..." required>
+            <h3>Payment Methods</h3>
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" name="paymentMethod" value="creditCard">
+                    Credit Card
+                </label>
+                <br>
+                <label>
+                    <input type="checkbox" name="paymentMethod" value="paypal">
+                    PayPal
+                </label>
+                <br>
+                <label>
+                    <input type="checkbox" name="paymentMethod" value="bankTransfer">
+                    Bank Transfer
+                </label>
+                <br>
+                <label>
+                    <input type="checkbox" name="paymentMethod" value="cashOnDelivery">
+                    Cash on Delivery
+                </label>
+                <br>
+                <label>
+                    <input type="checkbox" name="paymentMethod" value="orangeMoney">
+                    Orange Money/mtnMoney
+                </label>
+                <br>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <button type="submit" id="submit">Submit</button>
+        </fieldset>
+
+        <div id="confirmationMessage" class="message hidden">
+            Thank you for contacting ParoleRhema. Your order has been successfully recorded. We will contact you by your preferred method for more information.
+        </div>
+    </form>
+
+   <footer>
+    <div class="footer-content">
+        <h4>À Propos de Nous</h4>
+        <p>Nous sommes engagés à fournir des solutions de qualité pour répondre à vos besoins.</p>
+    </div>
+    <div class="footer-links">
+        <h4>Liens Utiles</h4>
+        <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">À Propos</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        </div>
+    <div class="footer-social">
+        <h4>Suivez-Nous</h4>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 ParoleRhema. Tous droits réservés.</p>
+    </div>
+</footer>
+    </body>
+     
+
+    
+</html>
